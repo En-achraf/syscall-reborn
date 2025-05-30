@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 15:41:47 by acennadi          #+#    #+#             */
-/*   Updated: 2025/05/30 20:32:42 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/05/30 20:33:36 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 
  int ft_dup2(int oldfd, int newfd)
  {
-    int value;
     int new_fd;
 
     if (oldfd == newfd)
         return (oldfd);
-    value = close(newfd);
+    close(newfd);
     new_fd = fcntl(oldfd, F_DUPFD, newfd);
     if (new_fd)
         return (-1);
