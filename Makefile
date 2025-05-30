@@ -15,4 +15,11 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -c $^ -o $@
 
 clean:
-	rm -rf $(OBJ) $(NAME)
+	rm -rf $(OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: clean
